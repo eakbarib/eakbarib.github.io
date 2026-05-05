@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Adley - CV</title>
+    <title>Sam Adley | Personal Website</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -11,59 +11,119 @@
             --accent-color: #3498db;
             --text-color: #333;
             --light-gray: #f9f9f9;
+            --nav-bg: #1a252f;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: var(--light-gray);
         }
 
+        /* Navigation Bar */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Container */
         .container {
+            max-width: 900px;
+            margin: 40px auto;
             background-color: white;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        header {
-            text-align: center;
+        /* Hero / Header Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+
+        .hero-text {
+            flex: 2;
         }
 
         h1 {
             color: var(--primary-color);
             margin: 0 0 10px 0;
-            font-size: 2.5em;
+            font-size: 3em;
         }
 
         .contact-info {
-            font-size: 0.9em;
+            font-size: 1em;
             color: var(--secondary-color);
+            margin-bottom: 15px;
         }
 
-        .summary {
-            font-style: italic;
-            text-align: justify;
-            margin-bottom: 30px;
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
         }
 
         h2 {
             color: var(--primary-color);
-            border-bottom: 1px solid #eee;
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 5px;
-            margin-top: 30px;
+            display: inline-block;
+            margin-top: 0;
         }
 
         h3 {
             color: var(--secondary-color);
             margin-bottom: 5px;
+            margin-top: 20px;
         }
 
         .date {
@@ -75,6 +135,9 @@
 
         .skills-list {
             line-height: 1.8;
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 5px;
         }
 
         ul {
@@ -102,107 +165,145 @@
             clear: both;
         }
 
-        @media (max-width: 600px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
             .date {
                 float: none;
                 display: block;
                 margin-top: 5px;
             }
             .container {
+                margin: 20px;
                 padding: 20px;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Sam Adley</h1>
-        <div class="contact-info">
-            2208 McTaggart Cowan Hall, 8888 University Drive, Burnaby, V5A 1S6<br>
-            <a href="mailto:eakbarib@sfu.ca">eakbarib@sfu.ca</a>
-        </div>
-    </header>
-
-    <section class="summary">
-        <p>Undergraduate Computer Science student (3.81 GPA) specializing in the intersection of visual computing, machine learning, and physically-based simulations. A multi-disciplinary researcher seeking a thesis-based Master's program to tackle complex, cross-domain challenges in Computer Science, Electrical Engineering, or Physics.</p>
-    </section>
-
-    <section class="education">
-        <h2>Education</h2>
-        <div class="header-group">
-            <h3>Bachelor's of Science in Computer Science <span class="date">Expected Graduation: Aug 2026</span></h3>
-        </div>
-        <p><strong>Simon Fraser University, Burnaby, BC</strong></p>
+    <!-- Navigation -->
+    <nav>
         <ul>
-            <li><strong>Relevant Coursework:</strong> CMPT464, CMPT410, CMPT407, CMPT461</li>
-            <li><strong>Honors:</strong> Dean's Honor Roll in 2024 Summer</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education & Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <section class="skills">
-        <h2>Skills</h2>
-        <p class="skills-list">
-            Python, Pytorch, Numpy, Pandas, Scipy, Mitsuba3, C++, Matlab, Apache Spark, Machine Learning, Deep Learning, Neural Networks, SVMs, AutoEncoders, Software Engineering, Test Units, Quantum Computing, Linear Algebra, Calculus
-        </p>
-    </section>
-
-    <section class="projects">
-        <h2>Projects</h2>
-        
-        <div class="project-item">
-            <div class="header-group">
-                <h3>Depth-Dependent Camera Intrinsic Estimation via Differentiable Bokeh Rendering</h3>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Sam Adley</h1>
+                <div class="contact-info">
+                    2208 McTaggart Cowan Hall, 8888 University Drive, Burnaby, V5A 1S6<br>
+                    <a href="mailto:eakbarib@sfu.ca">eakbarib@sfu.ca</a> | <a href="https://github.com/eakbarib" target="_blank">GitHub</a>
+                </div>
+                <p><strong>Undergraduate Computer Science Student (3.81 GPA)</strong></p>
+                <p>Multi-disciplinary researcher bridging theoretical computation with high-performance 3D visual computing.</p>
             </div>
-            <p><em>Academic Project (CMPT 461)</em></p>
-            <ul>
-                <li>Investigated focus-breathing phenomena in physical camera lenses by modeling depth-dependent intrinsic variations, challenging the standard fixed-intrinsic assumptions in 3D reconstruction.</li>
-                <li>Developed an optimization pipeline using PyTorch and Mitsuba 3's differentiable thin-lens sensor to match simulated depth-of-field blur against a custom physical focus stack (33 depths from 0.4m to 41m).</li>
-                <li>Quantified a 4.3&deg; field-of-view variation (12.6% focal length shift) and evaluated the optimized depth-varying intrinsics against baseline calibrations within COLMAP dense reconstruction pipelines.</li>
-                <li><strong>Tools:</strong> Python, PyTorch, Mitsuba 3, OpenCV (ArUco), COLMAP.</li>
-                <li><strong>Link:</strong> <a href="https://github.com/eakbarib/Camera-Blur-Modelling" target="_blank">GitHub Repository</a></li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <div class="header-group">
-                <h3>3D Shape Approximation via Learned Convex Decomposition</h3>
+            <div class="hero-image">
+                <!-- IMPORTANT: Make sure you upload a picture named 'profile.jpg' to your GitHub repo -->
+                <img src="profile.jpg" alt="Sam Adley Profile Picture" onerror="this.src='https://via.placeholder.com/200x200?text=Sam+Adley'">
             </div>
-            <p><em>CMPT464 Group Project | Tools: Python, PyTorch, Trimesh</em></p>
-            <ul>
-                <li>Co-authored a conference-style research paper evaluating a machine learning pipeline for decomposing meshes into convex primitives.</li>
-                <li>Conducted extensive ablation studies to isolate the impact of the loss function weights on reconstruction fidelity.</li>
-                <li>Benchmarked performance against state-of-the-art baselines (including SphereNet), demonstrating a 50% improvement in Intersection Over Union metric.</li>
-                <li><strong>Report Link:</strong> <a href="https://github.com/jmp-22/ConvexNetProject/blob/main/Report.pdf" target="_blank">Project PDF</a></li>
-            </ul>
-        </div>
-    </section>
+        </header>
 
-    <section class="experience">
-        <h2>Volunteer Experience</h2>
-        
-        <div class="experience-item">
-            <div class="header-group">
-                <h3>SFU ROSIE Lab <span class="date">Feb 2023 - Present</span></h3>
-            </div>
-            <ul>
-                <li>Made a significant contribution to a computer vision project focused on emergency situation recognition by providing valuable support in the preparation and cleaning of data.</li>
-                <li>Demonstrated a keen attention to detail and strong analytical skills, ensuring the data was effectively processed and properly formatted for use in the project's algorithm.</li>
-                <li>Successfully processed over 4000 records of raw data for the project, utilizing advanced data processing and analytical skills to partition the data into two distinct classes.</li>
-            </ul>
-        </div>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am an undergraduate student at Simon Fraser University seeking a thesis-based Master's program to tackle complex, cross-domain challenges. My academic and research interests lie firmly at the intersection of <strong>Deep Learning</strong>, <strong>Differentiable Rendering</strong>, and <strong>Computer Vision</strong>.</p>
+            
+            <p>I am passionate about building physically-grounded simulations and extracting structured, efficient representations from complex spatial data. Outside of the lab and the classroom, I like to stay active and explore British Columbia. In my free time, you can usually find me <strong>hiking</strong> the local trails, <strong>running</strong>, or experimenting with new recipes through <strong>cooking</strong>.</p>
+        </section>
 
-        <div class="experience-item">
+        <!-- Education & Skills Section -->
+        <section id="education">
+            <h2>Education & Skills</h2>
+            
             <div class="header-group">
-                <h3>CS Peer Tutoring <span class="date">Fall 2023</span></h3>
+                <h3>Bachelor's of Science in Computer Science <span class="date">Expected Graduation: Aug 2026</span></h3>
             </div>
+            <p><strong>Simon Fraser University, Burnaby, BC</strong></p>
             <ul>
-                <li>Helped students facing challenges with 1st and 2nd year CMPT courses such as CMPT295, CMPT125 and so on.</li>
+                <li><strong>Relevant Coursework:</strong> CMPT464, CMPT410, CMPT407, CMPT461</li>
+                <li><strong>Honors:</strong> Dean's Honor Roll in 2024 Summer</li>
             </ul>
-        </div>
-    </section>
-</div>
+
+            <h3>Technical Toolkit</h3>
+            <p class="skills-list">
+                <strong>Languages & Frameworks:</strong> Python, C++, PyTorch, NumPy, Pandas, SciPy, MATLAB, Apache Spark<br>
+                <strong>Concepts & Domains:</strong> Machine Learning, Deep Learning, Neural Networks, SVMs, AutoEncoders, Differentiable Rendering, Quantum Computing, Linear Algebra, Calculus<br>
+                <strong>Tools:</strong> Mitsuba 3, Software Engineering, Unit Testing
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-item">
+                <div class="header-group">
+                    <h3>Depth-Dependent Camera Intrinsic Estimation via Differentiable Bokeh Rendering</h3>
+                </div>
+                <p><em>Academic Project (CMPT 461)</em></p>
+                <ul>
+                    <li>Investigated focus-breathing phenomena in physical camera lenses by modeling depth-dependent intrinsic variations, challenging the standard fixed-intrinsic assumptions in 3D reconstruction.</li>
+                    <li>Developed an optimization pipeline using PyTorch and Mitsuba 3's differentiable thin-lens sensor to match simulated depth-of-field blur against a custom physical focus stack (33 depths from 0.4m to 41m).</li>
+                    <li>Quantified a 4.3&deg; field-of-view variation (12.6% focal length shift) and evaluated the optimized depth-varying intrinsics against baseline calibrations within COLMAP dense reconstruction pipelines.</li>
+                    <li><strong>Tools:</strong> Python, PyTorch, Mitsuba 3, OpenCV (ArUco), COLMAP.</li>
+                    <li><strong>Link:</strong> <a href="https://github.com/eakbarib/Camera-Blur-Modelling" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="header-group">
+                    <h3>3D Shape Approximation via Learned Convex Decomposition</h3>
+                </div>
+                <p><em>CMPT464 Group Project</em></p>
+                <ul>
+                    <li>Co-authored a conference-style research paper evaluating a machine learning pipeline for decomposing meshes into convex primitives.</li>
+                    <li>Conducted extensive ablation studies to isolate the impact of the loss function weights on reconstruction fidelity.</li>
+                    <li>Benchmarked performance against state-of-the-art baselines (including SphereNet), demonstrating a 50% improvement in Intersection Over Union metric.</li>
+                    <li><strong>Tools:</strong> Python, PyTorch, Trimesh.</li>
+                    <li><strong>Link:</strong> <a href="https://github.com/jmp-22/ConvexNetProject/blob/main/Report.pdf" target="_blank">Project PDF</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Volunteer Experience</h2>
+            
+            <div class="experience-item">
+                <div class="header-group">
+                    <h3>Research Data Assistant | SFU ROSIE Lab <span class="date">Feb 2023 - Present</span></h3>
+                </div>
+                <ul>
+                    <li>Made a significant contribution to a computer vision project focused on emergency situation recognition by providing valuable support in the preparation and cleaning of data.</li>
+                    <li>Demonstrated a keen attention to detail and strong analytical skills, ensuring the data was effectively processed and properly formatted for use in the project's algorithm.</li>
+                    <li>Successfully processed over 4,000 records of raw data for the project, utilizing advanced data processing and analytical skills to partition the data into two distinct classes.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="header-group">
+                    <h3>CS Peer Tutor | Simon Fraser University <span class="date">Fall 2023</span></h3>
+                </div>
+                <ul>
+                    <li>Helped students facing challenges with 1st and 2nd year CMPT courses, including Systems Architecture (CMPT 295) and Introduction to Computing Science (CMPT 125).</li>
+                </ul>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>

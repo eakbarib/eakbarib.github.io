@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Adley - CV</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-gray: #f9f9f9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+
+        .contact-info {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+
+        .summary {
+            font-style: italic;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .date {
+            float: right;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .skills-list {
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Clearfix for dates */
+        .header-group::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media (max-width: 600px) {
+            .date {
+                float: none;
+                display: block;
+                margin-top: 5px;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Sam Adley</h1>
+        <div class="contact-info">
+            2208 McTaggart Cowan Hall, 8888 University Drive, Burnaby, V5A 1S6<br>
+            <a href="mailto:eakbarib@sfu.ca">eakbarib@sfu.ca</a>
+        </div>
+    </header>
+
+    <section class="summary">
+        <p>Undergraduate Computer Science student (3.81 GPA) specializing in the intersection of visual computing, machine learning, and physically-based simulations. A multi-disciplinary researcher seeking a thesis-based Master's program to tackle complex, cross-domain challenges in Computer Science, Electrical Engineering, or Physics.</p>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <div class="header-group">
+            <h3>Bachelor's of Science in Computer Science <span class="date">Expected Graduation: Aug 2026</span></h3>
+        </div>
+        <p><strong>Simon Fraser University, Burnaby, BC</strong></p>
+        <ul>
+            <li><strong>Relevant Coursework:</strong> CMPT464, CMPT410, CMPT407, CMPT461</li>
+            <li><strong>Honors:</strong> Dean's Honor Roll in 2024 Summer</li>
+        </ul>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <p class="skills-list">
+            Python, Pytorch, Numpy, Pandas, Scipy, Mitsuba3, C++, Matlab, Apache Spark, Machine Learning, Deep Learning, Neural Networks, SVMs, AutoEncoders, Software Engineering, Test Units, Quantum Computing, Linear Algebra, Calculus
+        </p>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        
+        <div class="project-item">
+            <div class="header-group">
+                <h3>Depth-Dependent Camera Intrinsic Estimation via Differentiable Bokeh Rendering</h3>
+            </div>
+            <p><em>Academic Project (CMPT 461)</em></p>
+            <ul>
+                <li>Investigated focus-breathing phenomena in physical camera lenses by modeling depth-dependent intrinsic variations, challenging the standard fixed-intrinsic assumptions in 3D reconstruction.</li>
+                <li>Developed an optimization pipeline using PyTorch and Mitsuba 3's differentiable thin-lens sensor to match simulated depth-of-field blur against a custom physical focus stack (33 depths from 0.4m to 41m).</li>
+                <li>Quantified a 4.3&deg; field-of-view variation (12.6% focal length shift) and evaluated the optimized depth-varying intrinsics against baseline calibrations within COLMAP dense reconstruction pipelines.</li>
+                <li><strong>Tools:</strong> Python, PyTorch, Mitsuba 3, OpenCV (ArUco), COLMAP.</li>
+                <li><strong>Link:</strong> <a href="https://github.com/eakbarib/Camera-Blur-Modelling" target="_blank">GitHub Repository</a></li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="header-group">
+                <h3>3D Shape Approximation via Learned Convex Decomposition</h3>
+            </div>
+            <p><em>CMPT464 Group Project | Tools: Python, PyTorch, Trimesh</em></p>
+            <ul>
+                <li>Co-authored a conference-style research paper evaluating a machine learning pipeline for decomposing meshes into convex primitives.</li>
+                <li>Conducted extensive ablation studies to isolate the impact of the loss function weights on reconstruction fidelity.</li>
+                <li>Benchmarked performance against state-of-the-art baselines (including SphereNet), demonstrating a 50% improvement in Intersection Over Union metric.</li>
+                <li><strong>Report Link:</strong> <a href="https://github.com/jmp-22/ConvexNetProject/blob/main/Report.pdf" target="_blank">Project PDF</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="experience">
+        <h2>Volunteer Experience</h2>
+        
+        <div class="experience-item">
+            <div class="header-group">
+                <h3>SFU ROSIE Lab <span class="date">Feb 2023 - Present</span></h3>
+            </div>
+            <ul>
+                <li>Made a significant contribution to a computer vision project focused on emergency situation recognition by providing valuable support in the preparation and cleaning of data.</li>
+                <li>Demonstrated a keen attention to detail and strong analytical skills, ensuring the data was effectively processed and properly formatted for use in the project's algorithm.</li>
+                <li>Successfully processed over 4000 records of raw data for the project, utilizing advanced data processing and analytical skills to partition the data into two distinct classes.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="header-group">
+                <h3>CS Peer Tutoring <span class="date">Fall 2023</span></h3>
+            </div>
+            <ul>
+                <li>Helped students facing challenges with 1st and 2nd year CMPT courses such as CMPT295, CMPT125 and so on.</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

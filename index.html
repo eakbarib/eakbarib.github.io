@@ -208,8 +208,8 @@
                     2208 McTaggart Cowan Hall, 8888 University Drive, Burnaby, V5A 1S6<br>
                     <a href="mailto:eakbarib@sfu.ca">eakbarib@sfu.ca</a> | <a href="https://github.com/eakbarib" target="_blank">GitHub</a>
                 </div>
-                <p><strong>Undergraduate Computer Science Student (3.81 GPA)</strong></p>
-                <p>Multi-disciplinary researcher bridging theoretical computation with high-performance 3D visual computing.</p>
+                <p><strong>Undergraduate Computer Science Student (3.83 GPA)</strong></p>
+                <p>Researcher at the intersection of large language models and cybersecurity, building provable guarantees for LLM-based security tools.</p>
             </div>
             <div class="hero-image">
                 <!-- IMPORTANT: Make sure you upload a picture named 'profile.jpg' to your GitHub repo -->
@@ -220,7 +220,7 @@
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>I am an undergraduate student at Simon Fraser University seeking a thesis-based Master's program to tackle complex, cross-domain challenges. My academic and research interests lie firmly at the intersection of <strong>Deep Learning</strong>, <strong>Differentiable Rendering</strong>, and <strong>Computer Vision</strong>.</p>
+            <p>I am an undergraduate student at Simon Fraser University researching large language models and cybersecurity under the supervision of Dr. Sze Yiu Chau. My work builds on <strong>Formal Verification</strong> and <strong>Abstract Interpretation</strong>, and I am seeking a thesis-based Master's program in Computing Science.</p>
             
             <p>I am passionate about building physically-grounded simulations and extracting structured, efficient representations from complex spatial data. Outside of the lab and the classroom, I like to stay active and explore British Columbia. In my free time, you can usually find me <strong>hiking</strong> the local trails, <strong>running</strong>, or experimenting with new recipes through <strong>cooking</strong>.</p>
         </section>
@@ -234,21 +234,50 @@
             </div>
             <p><strong>Simon Fraser University, Burnaby, BC</strong></p>
             <ul>
-                <li><strong>Relevant Coursework:</strong> CMPT464, CMPT410, CMPT407, CMPT461</li>
-                <li><strong>Honors:</strong> Dean's Honor Roll in 2024 Summer</li>
+                <li><strong>Relevant Coursework:</strong> CMPT 464, CMPT 410, CMPT 409, CMPT 407, CMPT 461, CMPT 419</li>
+                <li><strong>Honors:</strong> Dean's Honor Roll in 2024 Summer, 2026 Summer</li>
             </ul>
 
             <h3>Technical Toolkit</h3>
             <p class="skills-list">
-                <strong>Languages & Frameworks:</strong> Python, C++, PyTorch, NumPy, Pandas, SciPy, MATLAB, Apache Spark<br>
-                <strong>Concepts & Domains:</strong> Machine Learning, Deep Learning, Neural Networks, SVMs, AutoEncoders, Differentiable Rendering, Quantum Computing, Linear Algebra, Calculus<br>
-                <strong>Tools:</strong> Mitsuba 3, Software Engineering, Unit Testing
+                <strong>Languages & Frameworks:</strong> Python, C++, PyTorch, NumPy, Pandas, SciPy, MATLAB, Apache Spark, Mitsuba 3<br>
+                <strong>Concepts & Domains:</strong> Machine Learning, Deep Learning, Neural Networks, SVMs, AutoEncoders, Formal Verification, Abstract Interpretation, Adversarial Robustness, Domain Theory, Quantum Computing, Linear Algebra, Calculus<br>
+                <strong>Tools:</strong> Software Engineering, Test Units
             </p>
         </section>
 
         <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
+
+            <div class="project-item">
+                <div class="header-group">
+                    <h3>Certified Robustness Verifier for ReLU Networks via DeepPoly Abstract Interpretation</h3>
+                </div>
+                <p><em>Academic Project (CMPT 419/983)</em></p>
+                <ul>
+                    <li>Implemented a sound robustness verifier from scratch that certifies MNIST classifications are invariant to bounded L&infin; input perturbations, without relying on external SMT or LP solvers.</li>
+                    <li>Derived closed-form affine bound-propagation rules for Linear, Conv2d, and ReLU layers based on the DeepPoly convex relaxation, including an explicit tensor-form convolution-to-matrix lowering.</li>
+                    <li>Engineered a hybrid certification strategy pairing a fast single-affine-form heuristic with a provably sound two-sided interval fallback, increasing the certified rate while strictly preserving soundness.</li>
+                    <li>Validated the verifier across 10 network architectures (7 fully connected, 3 convolutional) under varying perturbation budgets (&epsilon; up to 0.5).</li>
+                    <li><strong>Tools:</strong> Python, PyTorch.</li>
+                    <li><strong>Link:</strong> <a href="https://github.com/eakbarib/RELUVerifier" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="header-group">
+                    <h3>Domain-Theoretic Foundations of Neural Network Robustness Verification via Galois Connections</h3>
+                </div>
+                <p><em>Academic Project (CMPT 409)</em></p>
+                <ul>
+                    <li>Studied the order-theoretic and domain-theoretic foundations of abstract interpretation, formalizing how Galois connections between concrete and abstract semantics underlie the soundness of static program and network analyses.</li>
+                    <li>Connected this theory to neural network robustness verification, analyzing how convex-relaxation verifiers (e.g., DeepPoly-style abstract domains) instantiate a Galois connection between exact network semantics and a tractable abstract domain.</li>
+                    <li>Compiled a set of research notes bridging lattice theory and fixed-point theorems with practical verification techniques, complementing the DeepPoly-based verifier implemented for the related CMPT 419/983 course project.</li>
+                    <li><strong>Topics:</strong> Domain Theory, Lattice Theory, Galois Connections, Abstract Interpretation.</li>
+                    <li><strong>Link:</strong> <a href="https://github.com/eakbarib/Robustness-Galois-Connections" target="_blank">GitHub Repository</a></li>
+                </ul>
+            </div>
             
             <div class="project-item">
                 <div class="header-group">
@@ -285,7 +314,7 @@
             
             <div class="experience-item">
                 <div class="header-group">
-                    <h3>Research Data Assistant | SFU ROSIE Lab <span class="date">Feb 2023 - Mar 2023</span></h3>
+                    <h3>Research Data Assistant | SFU ROSIE Lab <span class="date">Feb 2023</span></h3>
                 </div>
                 <ul>
                     <li>Made a significant contribution to a computer vision project focused on emergency situation recognition by providing valuable support in the preparation and cleaning of data.</li>
